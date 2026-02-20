@@ -1,65 +1,108 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Printer, ShieldCheck, Zap } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="flex flex-col min-h-screen bg-background">
+      {/* Header with primary color accent */}
+      <header className="px-6 h-16 flex items-center justify-between border-b bg-card shadow-sm">
+        <div className="flex items-center gap-2 font-bold text-xl text-primary">
+          <Printer className="h-6 w-6" />
+          <span>CUET Print</span>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="flex gap-4">
+          <Link href="/login">
+            <Button variant="ghost">Login</Button>
+          </Link>
+          <Link href="/signup">
+            <Button>Sign Up</Button>
+          </Link>
         </div>
+      </header>
+
+      {/* Hero Section with gradient using primary colors */}
+      <main className="flex-1">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-br from-primary/5 via-accent/5 to-background">
+          <div className="container px-4 md:px-6 mx-auto">
+            <div className="flex flex-col items-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-foreground">
+                  Print Smart. Skip the Queue.
+                </h1>
+                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                  The hassle-free printing service for CUET students. Upload your files from your room, pick them up when ready. No USBs, no viruses.
+                </p>
+              </div>
+              <div className="space-x-4 pt-4">
+                <Link href="/login">
+                  <Button className="h-11 px-8 rounded-full text-lg" size="lg">
+                    Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link href="/signup">
+                  <Button variant="secondary" className="h-11 px-8 rounded-full text-lg">
+                    Register Shop
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section with semantic colors */}
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-card">
+          <div className="container px-4 md:px-6 mx-auto">
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+              {/* Feature 1: Primary Blue */}
+              <div className="flex flex-col items-center space-y-2 border border-border bg-card p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary/50 transition-all">
+                <div className="p-3 bg-primary/10 rounded-full">
+                  <Zap className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground">Instant Upload</h3>
+                <p className="text-sm text-muted-foreground text-center">
+                  Upload PDFs directly from your phone or laptop. No need to carry pen drives or log into public PCs.
+                </p>
+              </div>
+              
+              {/* Feature 2: Success Green */}
+              <div className="flex flex-col items-center space-y-2 border border-border bg-card p-6 rounded-xl shadow-sm hover:shadow-md hover:border-success/50 transition-all">
+                <div className="p-3 bg-success/10 rounded-full">
+                  <ShieldCheck className="h-6 w-6 text-success" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground">Virus Free</h3>
+                <p className="text-sm text-muted-foreground text-center">
+                  Protect your data. Since you don't plug in USB drives, you are safe from the infamous shop shortcuts virus.
+                </p>
+              </div>
+              
+              {/* Feature 3: Accent Orange */}
+              <div className="flex flex-col items-center space-y-2 border border-border bg-card p-6 rounded-xl shadow-sm hover:shadow-md hover:border-accent/50 transition-all">
+                <div className="p-3 bg-accent/10 rounded-full">
+                  <Printer className="h-6 w-6 text-accent" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground">Real-time Status</h3>
+                <p className="text-sm text-muted-foreground text-center">
+                  Track your print job status. Only go to the shop when you see the "Completed" badge.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
+
+      {/* Footer */}
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-card">
+        <p className="text-xs text-muted-foreground">© 2026 CUET Print Service. Built by Students.</p>
+        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+          <Link className="text-xs hover:underline underline-offset-4 text-muted-foreground hover:text-primary" href="#">
+            Terms of Service
+          </Link>
+          <Link className="text-xs hover:underline underline-offset-4 text-muted-foreground hover:text-primary" href="#">
+            Privacy
+          </Link>
+        </nav>
+      </footer>
     </div>
   );
 }
