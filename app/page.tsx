@@ -23,14 +23,14 @@ export default function Home() {
 
       {/* Hero Section with gradient using primary colors */}
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-br from-primary/5 via-accent/5 to-background">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-linear-to-br from-primary/5 via-accent/5 to-background">
           <div className="container px-4 md:px-6 mx-auto">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-foreground">
                   Print Smart. Skip the Queue.
                 </h1>
-                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                <p className="mx-auto max-w-175 text-muted-foreground md:text-xl">
                   The hassle-free printing service for CUET students. Upload your files from your room, pick them up when ready. No USBs, no viruses.
                 </p>
               </div>
@@ -72,7 +72,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold text-foreground">Virus Free</h3>
                 <p className="text-sm text-muted-foreground text-center">
-                  Protect your data. Since you don't plug in USB drives, you are safe from the infamous shop shortcuts virus.
+                  Protect your data. Since you don&apos;t plug in USB drives, you are safe from the infamous shop shortcuts virus.
                 </p>
               </div>
 
@@ -83,7 +83,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold text-foreground">Real-time Status</h3>
                 <p className="text-sm text-muted-foreground text-center">
-                  Track your print job status. Only go to the shop when you see the "Completed" badge.
+                  Track your print job status. Only go to the shop when you see the &quot;Completed&quot; badge.
                 </p>
               </div>
             </div>
