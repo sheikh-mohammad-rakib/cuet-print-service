@@ -34,6 +34,10 @@ export default function SignupPage() {
       toast({ title: "Error", description: "Please fill in all basic fields", variant: "destructive" });
       return;
     }
+    if (password.length < 8) {
+      toast({ title: "Error", description: "Password must be at least 8 characters", variant: "destructive" });
+      return;
+    }
     if (role === "owner" && (!shopName || !location)) {
       toast({ title: "Error", description: "Shop Name and Location are required", variant: "destructive" });
       return;
@@ -117,15 +121,15 @@ export default function SignupPage() {
               {/* Common Fields */}
               <div className="space-y-2">
                 <Label>Full Name</Label>
-                <Input placeholder="John Doe" onChange={(e) => setName(e.target.value)} />
+                <Input placeholder="John Doe" value={name} onChange={(e) => setName(e.target.value)} />
               </div>
               <div className="space-y-2">
                 <Label>Email</Label>
-                <Input type="email" placeholder="email@cuet.ac.bd" onChange={(e) => setEmail(e.target.value)} />
+                <Input type="email" placeholder="email@cuet.ac.bd" value={email} onChange={(e) => setEmail(e.target.value)} />
               </div>
               <div className="space-y-2">
                 <Label>Password</Label>
-                <Input type="password" onChange={(e) => setPassword(e.target.value)} />
+                <Input type="password" placeholder="Min. 8 characters" value={password} onChange={(e) => setPassword(e.target.value)} />
               </div>
 
               {/* Shop Owner Extra Fields */}
@@ -133,11 +137,11 @@ export default function SignupPage() {
                 <p className="text-sm font-medium text-gray-500">Shop Details</p>
                 <div className="space-y-2">
                   <Label>Shop Name</Label>
-                  <Input placeholder="Mayer Doa Photostat" onChange={(e) => setShopName(e.target.value)} />
+                  <Input placeholder="Mayer Doa Photostat" value={shopName} onChange={(e) => setShopName(e.target.value)} />
                 </div>
                 <div className="space-y-2">
                   <Label>Location</Label>
-                  <Input placeholder="Civil Building, Ground Floor" onChange={(e) => setLocation(e.target.value)} />
+                  <Input placeholder="Civil Building, Ground Floor" value={location} onChange={(e) => setLocation(e.target.value)} />
                 </div>
               </TabsContent>
 
