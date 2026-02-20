@@ -34,14 +34,14 @@ export default function Home() {
                   The hassle-free printing service for CUET students. Upload your files from your room, pick them up when ready. No USBs, no viruses.
                 </p>
               </div>
-              <div className="space-x-4 pt-4">
+              <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
                 <Link href="/login">
-                  <Button className="h-11 px-8 rounded-full text-lg" size="lg">
+                  <Button className="w-full sm:w-auto h-11 px-8 rounded-full text-lg" size="lg">
                     Get Started <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
                 <Link href="/signup">
-                  <Button variant="secondary" className="h-11 px-8 rounded-full text-lg">
+                  <Button variant="secondary" className="w-full sm:w-auto h-11 px-8 rounded-full text-lg">
                     Register Shop
                   </Button>
                 </Link>
@@ -64,7 +64,7 @@ export default function Home() {
                   Upload PDFs directly from your phone or laptop. No need to carry pen drives or log into public PCs.
                 </p>
               </div>
-              
+
               {/* Feature 2: Success Green */}
               <div className="flex flex-col items-center space-y-2 border border-border bg-card p-6 rounded-xl shadow-sm hover:shadow-md hover:border-success/50 transition-all">
                 <div className="p-3 bg-success/10 rounded-full">
@@ -75,7 +75,7 @@ export default function Home() {
                   Protect your data. Since you don't plug in USB drives, you are safe from the infamous shop shortcuts virus.
                 </p>
               </div>
-              
+
               {/* Feature 3: Accent Orange */}
               <div className="flex flex-col items-center space-y-2 border border-border bg-card p-6 rounded-xl shadow-sm hover:shadow-md hover:border-accent/50 transition-all">
                 <div className="p-3 bg-accent/10 rounded-full">
